@@ -11,7 +11,7 @@ const Packege = () => {
                         <h2 className="card-title">Share your ride</h2>
                         <p>If a dog chews shoes whose shoes does he choose?</p>
                         <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Buy Now</button>
+                            <button className="btn bg-black hover:btn-warning text-white">Buy Now</button>
                         </div>
                     </div>
                 </div>
@@ -21,7 +21,7 @@ const Packege = () => {
                         <h2 className="card-title">Share your ride</h2>
                         <p>If a dog chews shoes whose shoes does he choose?</p>
                         <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Buy Now</button>
+                            <button className="btn bg-black hover:btn-warning text-white">Buy Now</button>
                         </div>
                     </div>
                 </div>
@@ -31,7 +31,7 @@ const Packege = () => {
                         <h2 className="card-title">Share your ride</h2>
                         <p>If a dog chews shoes whose shoes does he choose?</p>
                         <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Buy Now</button>
+                            <button className="btn bg-black hover:btn-warning text-white">Buy Now</button>
                         </div>
                     </div>
                 </div>

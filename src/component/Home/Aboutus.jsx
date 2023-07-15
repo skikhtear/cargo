@@ -10,7 +10,7 @@ const Aboutus = () => {
                 <div>
                     <h2 className='text-3xl mb-5 font-bold'>Trusted Cab Services
                         in the World</h2>
-                    <p className='mb-5'>Curabitur placerat cursus nisi nec pharetra. Proin quis tortor fringilla, placerat nisi nec, auctor ex. Donec commodo orci ac lectus mattis, sed interdum sem scelerisque.</p>
+                    <p className='mb-5'>Curabitur placerat cursus nisi nec pharetra. Proin quis tortor fringilla, placerat <br /> nisi nec, auctor ex. Donec commodo orci ac lectus mattis, sed interdum sem scelerisque.</p>
                     <ul>
                         <li className='flex mb-3'><FaCheckCircle className='mt-1' />Cras justo odio</li>
                         <li className='flex mb-3'><FaCheckCircle className='mt-1' />Cras justo odio</li>
