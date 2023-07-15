@@ -1,11 +1,11 @@
 import React from 'react';
-import imgApp from '../../assets/449a436f-92ee-4d30-8b6c-7ae6b303abc3.png'
+import imgApp from '../../assets/449a436f-92ee-4d30-8b6c-7ae6b303abc3-removebg-preview.png'
 import {FaApple, FaGooglePlay} from 'react-icons/fa';
 
 const DownloadApp = () => {
     return (
-        <div>
-            <h1 className='text-5xl text-center my-10 font-bold'>Download CarrGo</h1>
+        <div className='bg-amber-100'>
+            <h1 className='text-5xl text-center pt-20 my-10 font-bold'>Download CarrGo</h1>
             <div className='grid lg:grid-cols-2 md:grid-cols-2 gap-10 mx-20'>
                 <div>
                     <img src={imgApp} alt="" className='mx-auto' />
