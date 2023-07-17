@@ -4,10 +4,13 @@ import Contact from "../component/Home/Contact";
 import Home from "../component/Home/Home";
 import Packege from "../component/Home/Packege";
 import Login from "../component/Login/Login";
-import Signup from "../component/Signup/Signup";
+import Signup from "../component/Signup/DriverSignup";
 import DashboardHome from "../Dashboard/DashboardHome";
 import DashboardLayout from "../Layout/DashboardLayout";
 import Main from "../Layout/Main";
+import DriverSignup from "../component/Signup/DriverSignup";
+import RiderSignup from "../component/Signup/RiderSignup";
+import AmbassadorSignup from "../component/Signup/AmbassadorSignup";
 
 const router = createBrowserRouter([{
     path: '/',
@@ -29,8 +32,16 @@ const router = createBrowserRouter([{
       element:<Contact/>  
     },
     {
-        path: '/signup',
-      element:<Signup/>  
+        path: '/driver-signup',
+      element:<DriverSignup/>  
+    },
+    {
+        path: '/rider-signup',
+      element:<RiderSignup/>  
+    },
+    {
+        path: '/ambassador-signup',
+      element:<AmbassadorSignup/>  
     },
     {
         path: '/login',

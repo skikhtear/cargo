@@ -14,6 +14,7 @@ const DashboardLayout = () => {
                 <div className="drawer-content">
                     {/* Page content here */}
                     <label htmlFor="my-drawer" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+                    <Outlet/>
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer" className="drawer-overlay"></label>

@@ -6,10 +6,12 @@ import DownloadApp from './DownloadApp';
 import GoogleMap from './GoogleMap';
 import HowItWork from './HowItWork';
 import Packege from './Packege';
+import Market from './Market';
 
 const Home = () => {
     return (
         <div>
+            <Market/>
             <Banner />
             <HowItWork />
             <DownloadApp />
