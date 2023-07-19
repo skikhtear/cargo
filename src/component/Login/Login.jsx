@@ -1,14 +1,9 @@
 import React, { useState } from "react";
-import register from '../../assets/register_bg_2.png'
+import register from '../../assets/register_bg_2.png';
 import { Link, Navigate } from "react-router-dom";
-import useToken from "../../hooks/useToken";
-
-
 
 export default function Login() {
     const [loginUserEmail, setLoginUserEmail] = useState('');
-    const [token] = useToken(loginUserEmail)
-    
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -19,24 +14,25 @@ export default function Login() {
         const formData = {
             email,
             password
-            
         };
 
         try {
             // Make a POST request to your API endpoint
-            const response = await fetch('http://localhost:5000/driver-signin', {
+            const response = await fetch('http://localhost:5000/admin-signin', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(formData)
             });
-            
+
             if (response.ok) {
                 // Handle successful signup
-                setLoginUserEmail(formData.email)
+                const data = await response.json();
+                setLoginUserEmail(formData.email);
+                localStorage.setItem('token', data.token); // Save the JWT in the local storage
                 console.log('Signin successful!');
-                return <Navigate to="/contact" replace={true} />;
+                window.location.href = '/dashboard';
             } else {
                 // Handle signup error
                 console.log('Signin failed.');

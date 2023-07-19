@@ -4,9 +4,9 @@ import { Link, Navigate, Outlet } from "react-router-dom";
 
 
 const DashboardLayout = () => {
-    // if (!localStorage.getItem("token")) {
-    //     return <Navigate to="/login" replace={true} />;
-    // }
+    if (!localStorage.getItem("token")) {
+        return <Navigate to="/login" replace={true} />;
+    }
     return (
         <div>
             <div className="drawer drawer-mobile lg:drawer-open">
