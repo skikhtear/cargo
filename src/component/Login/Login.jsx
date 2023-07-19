@@ -18,7 +18,7 @@ export default function Login() {
 
         try {
             // Make a POST request to your API endpoint
-            const response = await fetch('http://localhost:5000/admin-signin', {
+            const response = await fetch('https://xox-api.vercel.app/admin-signin', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

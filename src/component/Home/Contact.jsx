@@ -23,7 +23,7 @@ const Contact = () => {
                 <div className='border border-black p-10'>
                     <img src={contact3} alt="" className='mx-auto' />
                     <h3 className='text-3xl text-center my-4'>Email</h3>
-                    <p>#</p>
+                    <p>Email: xoxride@gmail.com</p>
                 </div>
             </div>
         </div>

@@ -11,6 +11,45 @@ export default function AmbassadorSignup() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+
+    //     // Create an object with the form data
+    //     const formData = {
+    //         name,
+    //         mobile,
+    //         email,
+    //         password
+    //     };
+
+    //     try {
+    //         // Make a POST request to your API endpoint
+    //         const response = await fetch('https://xox-api.vercel.app/ambassador-signup', {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json'
+    //             },
+    //             body: JSON.stringify(formData)
+    //         });
+
+    //         // Check if the request was successful
+    //         if (response.ok) {
+    //             // Handle successful signup
+    //             console.log('Signup successful!');
+    //             window.location = "/payment";
+    //         } else {
+    //             // Handle signup error
+    //             console.log('Signup failed.');
+    //         }
+    //     } catch (error) {
+    //         // Handle any network or API errors
+    //         console.log('An error occurred:', error);
+    //     }
+    // };
+
+
+
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -24,7 +63,7 @@ export default function AmbassadorSignup() {
 
         try {
             // Make a POST request to your API endpoint
-            const response = await fetch('http://localhost:5000/ambassador-signup', {
+            const response = await fetch('https://xox-api.vercel.app/ambassador-signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -36,6 +75,26 @@ export default function AmbassadorSignup() {
             if (response.ok) {
                 // Handle successful signup
                 console.log('Signup successful!');
+
+                // Make a request to the nodemailer API
+                try {
+                    const nodemailerResponse = await fetch('https://xox-api.vercel.app/ambassador-email', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(formData)
+                    });
+
+                    if (nodemailerResponse.ok) {
+                        console.log('Email sent successfully!');
+                    } else {
+                        console.log('Failed to send email.');
+                    }
+                } catch (error) {
+                    console.log('An error occurred while sending the email:', error);
+                }
+
                 window.location = "/payment";
             } else {
                 // Handle signup error
@@ -46,6 +105,9 @@ export default function AmbassadorSignup() {
             console.log('An error occurred:', error);
         }
     };
+
+
+
 
     return (
         <>

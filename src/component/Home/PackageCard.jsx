@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const PackageCard = ({ pac }) => {
     const { title, price, subtitle, detailsField1, detailsField2, detailsField3, detailsField4 } = pac
@@ -17,7 +18,7 @@ const PackageCard = ({ pac }) => {
                 <h2 className=" mb-5">{detailsField4}</h2>
 
                 <div className="card-actions justify-center">
-                    <button className="btn bg-black hover:btn-warning text-white">Buy Package</button>
+                    <Link to="/rider-signup"><button className="btn bg-black hover:btn-warning text-white">Buy Package</button></Link>
                 </div>
             </div>
         </div>

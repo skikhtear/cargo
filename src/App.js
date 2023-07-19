@@ -22,7 +22,7 @@ export default App;
 //   const handleSignUp = async (e) => {
 //     e.preventDefault();
 //     try {
-//       const response = await axios.post('http://localhost:5000/signup', {
+//       const response = await axios.post('https://xox-api.vercel.app/signup', {
 //         email,
 //         password,
 //       });
@@ -36,7 +36,7 @@ export default App;
 //   const handleSignIn = async (e) => {
 //     e.preventDefault();
 //     try {
-//       const response = await axios.post('http://localhost:5000/signin', {
+//       const response = await axios.post('https://xox-api.vercel.app/signin', {
 //         email,
 //         password,
 //       });

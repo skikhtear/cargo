@@ -30,7 +30,7 @@ const AllDriver = () => {
         const proceed = window.confirm('Are you sure, you want to delete this Driver information');
         try {
             if (proceed) {
-                const response = await fetch(`http://localhost:5000/driver/${id}`, { method: 'DELETE' }); // Replace 'API_ENDPOINT' with your actual API endpoint
+                const response = await fetch(`https://xox-api.vercel.app/driver/${id}`, { method: 'DELETE' }); // Replace 'API_ENDPOINT' with your actual API endpoint
                 setData(data.filter((item) => item.id !== id));
                 // if (data.deletedCount > 0) {
                 //     toast('deleted successfully');

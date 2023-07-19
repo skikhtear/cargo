@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaCheckCircle } from 'react-icons/fa';
-import carimg from '../../assets/95f6ddb4-bbea-46d9-8e08-d4d42899d320-removebg-preview.png'
+import carimg from '../../assets/Tata-Premium-Sedan-Rendering-removebg-preview.png'
 
 const Aboutus = () => {
     return (

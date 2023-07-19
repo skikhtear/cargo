@@ -1,5 +1,5 @@
 import React from 'react';
-import imgApp from '../../assets/449a436f-92ee-4d30-8b6c-7ae6b303abc3-removebg-preview.png'
+import imgApp from '../../assets/16.32 (2).png'
 import {FaApple, FaGooglePlay} from 'react-icons/fa';
 
 const DownloadApp = () => {

@@ -13,7 +13,7 @@ const AllRider = () => {
 
     const fetchData = async () => {
         try {
-            const response = await fetch('http://localhost:5000/rider'); // Replace 'API_ENDPOINT' with your actual API endpoint
+            const response = await fetch('https://xox-api.vercel.app/rider'); // Replace 'API_ENDPOINT' with your actual API endpoint
             const data = await response.json();
             setData(data);
         } catch (error) {
@@ -30,7 +30,7 @@ const AllRider = () => {
         const proceed = window.confirm('Are you sure, you want to delete this Driver information');
         try {
             if (proceed) {
-                const response = await fetch(`http://localhost:5000/rider/${id}`, { method: 'DELETE' }); // Replace 'API_ENDPOINT' with your actual API endpoint
+                const response = await fetch(`https://xox-api.vercel.app/rider/${id}`, { method: 'DELETE' }); // Replace 'API_ENDPOINT' with your actual API endpoint
                 setData(data.filter((item) => item.id !== id));
                 // if (data.deletedCount > 0) {
                 //     toast('deleted successfully');

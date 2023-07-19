@@ -1,5 +1,7 @@
 import React from "react";
 import { Link, Navigate, Outlet } from "react-router-dom";
+import logo from '../assets/WhatsApp Image 2023-07-20 at 02.10.04.jpg'
+
 
 
 
@@ -22,7 +24,7 @@ const DashboardLayout = () => {
                         <Link to="/">
                             <img
                                 className="w-[120px] md:w-[200px] lg:w-[200px]"
-                                src=""
+                                src={logo}
                                 alt=""
                             />
                         </Link>

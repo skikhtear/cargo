@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../../assets/WhatsApp Image 2023-07-20 at 02.10.04.jpg'
 
 const Navbar = () => {
 
@@ -17,21 +18,21 @@ const Navbar = () => {
                         </label>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 bg-black text-white">
                             <li><Link to="/">Home</Link></li>
-                            <li><Link to="/package">Package</Link></li>
-                            <li><Link to="about-us">About</Link></li>
-                            <li><Link to="contact">Contact</Link></li>
-                            <li><Link to="/ambassador-signup">Ambassador</Link></li>
+                            <li><Link to="/about-us">About Us</Link></li>
+                            <li><Link to="/contact">Contact Us</Link></li>
+                            <li><Link to="/package">Pledge Packages </Link></li>
+                            <li><Link to="/ambassador-signup">Become Ambassador</Link></li>
                         </ul>
                     </div>
-                    <Link><a className="btn btn-ghost normal-case text-xl">XOX</a></Link>
+                    <Link to="/"><a className="btn btn-ghost normal-case text-xl"><img src={logo} alt="" /></a></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-lg">
                         <li><Link to="/">Home</Link></li>
-                        <li><Link to="/package">Package</Link></li>
-                        <li><Link to="/about-us">About</Link></li>
-                        <li><Link to="/contact">Contact</Link></li>
-                        <li><Link to="/ambassador-signup"> Ambassador</Link></li>
+                        <li><Link to="/about-us">About Us</Link></li>
+                        <li><Link to="/contact">Contact Us</Link></li>
+                        <li><Link to="/package">Pledge Packages </Link></li>
+                        <li><Link to="/ambassador-signup">Become Ambassador</Link></li>
                         
                     </ul>
                 </div>
@@ -47,7 +48,7 @@ const Navbar = () => {
                         
                         <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-24 text-black gap-3 font-bold">
                             <Link to="/driver-signup"><li className='hover:underline'>Driver</li></Link>
-                            <Link to="/rider-signup"><li className='hover:underline'>Rider</li></Link>
+                            <Link to="/package"><li className='hover:underline'>Rider</li></Link>
                             <Link to="/ambassador-signup"><li className='hover:underline'>Ambassador</li></Link>
                         </ul>
                     </div>

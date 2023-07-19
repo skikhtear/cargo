@@ -20,13 +20,12 @@ export default function RiderSignup() {
             name,
             mobile,
             email,
-            invite_code,
             password
         };
 
         try {
             // Make a POST request to your API endpoint
-            const response = await fetch('http://localhost:5000/rider-signup', {
+            const response = await fetch('https://xox-api.vercel.app/rider-signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -38,7 +37,27 @@ export default function RiderSignup() {
             if (response.ok) {
                 // Handle successful signup
                 console.log('Signup successful!');
-                window.location = "/payment";
+
+                // Make a request to the nodemailer API
+                try {
+                    const nodemailerResponse = await fetch('https://xox-api.vercel.app/rider-email', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(formData)
+                    });
+
+                    if (nodemailerResponse.ok) {
+                        console.log('Email sent successfully!');
+                    } else {
+                        console.log('Failed to send email.');
+                    }
+                } catch (error) {
+                    console.log('An error occurred while sending the email:', error);
+                }
+
+                window.location = "/https://buy.stripe.com/test_fZeaHc7bG2Mx316eUU";
             } else {
                 // Handle signup error
                 console.log('Signup failed.');

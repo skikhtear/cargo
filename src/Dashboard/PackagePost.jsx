@@ -27,7 +27,7 @@ const PackagePost = () => {
 
         try {
             // Make a POST request to your API endpoint
-            const response = await fetch('http://localhost:5000/add-package', {
+            const response = await fetch('https://xox-api.vercel.app/add-package', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

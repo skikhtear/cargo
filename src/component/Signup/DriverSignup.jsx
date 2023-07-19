@@ -5,7 +5,7 @@ import register from '../../assets/register_bg_2.png'
 
 
 export default function DriverSignup() {
-    
+
     const [name, setName] = useState('');
     const [mobile, setMobile] = useState('');
     const [email, setEmail] = useState('');
@@ -24,7 +24,7 @@ export default function DriverSignup() {
 
         try {
             // Make a POST request to your API endpoint
-            const response = await fetch('http://localhost:5000/driver-signup', {
+            const response = await fetch('https://xox-api.vercel.app/driver-signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -36,6 +36,26 @@ export default function DriverSignup() {
             if (response.ok) {
                 // Handle successful signup
                 console.log('Signup successful!');
+
+                // Make a request to the nodemailer API
+                try {
+                    const nodemailerResponse = await fetch('https://xox-api.vercel.app/driver-email', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(formData)
+                    });
+
+                    if (nodemailerResponse.ok) {
+                        console.log('Email sent successfully!');
+                    } else {
+                        console.log('Failed to send email.');
+                    }
+                } catch (error) {
+                    console.log('An error occurred while sending the email:', error);
+                }
+
                 window.location = "/payment";
             } else {
                 // Handle signup error
@@ -67,10 +87,10 @@ export default function DriverSignup() {
                                     <div className="rounded-t mb-0 px-6 py-6">
                                         <div className="text-center mb-3">
                                             <h6 className="text-gray-600 text-2xl font-bold">
-                                               Driver Sign Up
+                                                Driver Sign Up
                                             </h6>
                                         </div>
-                                        
+
                                         <hr className="mt-6 border-b-1 border-gray-400" />
                                     </div>
                                     <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
@@ -130,7 +150,7 @@ export default function DriverSignup() {
                                                     required
                                                 />
                                             </div>
-                                            
+
                                             <div className="relative w-full mb-3">
                                                 <label
                                                     className="block uppercase text-gray-700 text-xs font-bold mb-2"
@@ -149,7 +169,7 @@ export default function DriverSignup() {
                                                     required
                                                 />
                                             </div>
-                                            
+
 
                                             <div className="text-center mt-6">
                                                 <button
@@ -164,10 +184,10 @@ export default function DriverSignup() {
                                     </div>
                                 </div>
                                 <div className="flex flex-wrap mt-6">
-                                    
+
                                     <div className="w-1/2 text-right">
                                         <Link
-                                           to="/login"
+                                            to="/login"
                                             onClick={e => e.preventDefault()}
                                             className="text-gray-300"
                                         >

@@ -1,8 +1,8 @@
 import React from 'react';
-import img from '../../assets/95f6ddb4-bbea-46d9-8e08-d4d42899d320.png'
-import driver from '../../assets/Driving-position-1160x653.jpg'
-import rider from '../../assets/Driving-safely-with-passengers-in-the-car-1-e1463403059746.jpg'
-import ambassador from '../../assets/istockphoto-1163423519-612x612.jpg'
+
+import driver from '../../assets/10.png'
+import rider from '../../assets/3.png'
+import ambassador from '../../assets/6.png'
 import { Link } from 'react-router-dom';
 
 const Market = () => {
