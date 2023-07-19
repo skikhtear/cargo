@@ -1,9 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import register from '../../assets/register_bg_2.png'
+import { Link, Navigate } from "react-router-dom";
+import useToken from "../../hooks/useToken";
 
 
 
 export default function Login() {
+    const [loginUserEmail, setLoginUserEmail] = useState('');
+    const [token] = useToken(loginUserEmail)
+    
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        // Create an object with the form data
+        const formData = {
+            email,
+            password
+            
+        };
+
+        try {
+            // Make a POST request to your API endpoint
+            const response = await fetch('http://localhost:5000/driver-signin', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+            
+            if (response.ok) {
+                // Handle successful signup
+                setLoginUserEmail(formData.email)
+                console.log('Signin successful!');
+                return <Navigate to="/contact" replace={true} />;
+            } else {
+                // Handle signup error
+                console.log('Signin failed.');
+            }
+        } catch (error) {
+            // Handle any network or API errors
+            console.log('An error occurred:', error);
+        }
+    };
     return (
         <>
             <main>
@@ -57,7 +99,7 @@ export default function Login() {
                                     </div>
                                     <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
                                         
-                                        <form>
+                                        <form onSubmit={handleSubmit}>
                                             <div className="relative w-full mb-3">
                                                 <label
                                                     className="block uppercase text-gray-700 text-xs font-bold mb-2"
@@ -67,6 +109,9 @@ export default function Login() {
                                                 </label>
                                                 <input
                                                     type="email"
+                                                    id="email"
+                                                    value={email}
+                                                    onChange={(e) => setEmail(e.target.value)}
                                                     className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                                                     placeholder="Email"
                                                     style={{ transition: "all .15s ease" }}
@@ -82,6 +127,9 @@ export default function Login() {
                                                 </label>
                                                 <input
                                                     type="password"
+                                                    id="password"
+                                                    value={password}
+                                                    onChange={(e) => setPassword(e.target.value)}
                                                     className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                                                     placeholder="Password"
                                                     style={{ transition: "all .15s ease" }}
@@ -104,8 +152,9 @@ export default function Login() {
                                             <div className="text-center mt-6">
                                                 <button
                                                     className="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full"
-                                                    type="button"
+                                                    type="submit"
                                                     style={{ transition: "all .15s ease" }}
+
                                                 >
                                                     Sign In
                                                 </button>

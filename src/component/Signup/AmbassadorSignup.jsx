@@ -36,6 +36,7 @@ export default function AmbassadorSignup() {
             if (response.ok) {
                 // Handle successful signup
                 console.log('Signup successful!');
+                window.location = "/payment";
             } else {
                 // Handle signup error
                 console.log('Signup failed.');

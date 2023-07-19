@@ -32,18 +32,16 @@ const DashboardLayout = () => {
                         <li>
                             <Link to="/dashboard">DASHBOARD</Link>
                         </li>
-                        <div className="collapse collapse-plus ">
-                            <input type="checkbox" />
-                            <div className="collapse-title ">AMBASSADOR SECTION</div>
-                            <div className="collapse-content">
-                                <li className="text-red-800">
-                                    <Link to="/dashboard/all-products">All AMBASSADOR</Link>
-                                </li>
-                                <li className="text-red-800">
-                                    <Link to="/dashboard/add-product">ADD PRODUCT</Link>
-                                </li>
-                            </div>
-                        </div>
+                        <li>
+                            <Link to="/dashboard/all-ambassadors">AMBASSADORS</Link>
+                        </li>
+                        <li>
+                            <Link to="/dashboard/all-drivers">DRIVERS</Link>
+                        </li>
+                        <li>
+                            <Link to="/dashboard/all-riders">RIDERS</Link>
+                        </li>
+                        
                         
                         
                         
@@ -55,7 +53,7 @@ const DashboardLayout = () => {
                                     <Link to="/dashboard/add-package">ADD PACKAGE</Link>
                                 </li>
                                 <li className="text-red-800">
-                                    <Link to="/dashboard/all-package">ALL PACKAGE</Link>
+                                    <Link to="/dashboard/all-packages">ALL PACKAGE</Link>
                                 </li>
                             </div>
                         </div>

@@ -7,17 +7,18 @@ import GoogleMap from './GoogleMap';
 import HowItWork from './HowItWork';
 import Packege from './Packege';
 import Market from './Market';
+import Count from './count';
 
 const Home = () => {
     return (
         <div>
-            <Market/>
             <Banner />
+            <Market/>
             <HowItWork />
             <DownloadApp />
             <Packege />
             <Aboutus />
-            <GoogleMap/>
+            <Count/>
         </div>
     );
 };

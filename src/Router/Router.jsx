@@ -11,6 +11,12 @@ import Main from "../Layout/Main";
 import DriverSignup from "../component/Signup/DriverSignup";
 import RiderSignup from "../component/Signup/RiderSignup";
 import AmbassadorSignup from "../component/Signup/AmbassadorSignup";
+import Payment from "../component/Signup/payment";
+import PackagePost from "../Dashboard/PackagePost";
+import AllPackeges from "../Dashboard/AllPackage";
+import AllDriver from "../Dashboard/AllDrivers";
+import AllRider from "../Dashboard/AllRider";
+import AllAmbassador from "../Dashboard/AllAmbassador";
 
 const router = createBrowserRouter([{
     path: '/',
@@ -46,6 +52,10 @@ const router = createBrowserRouter([{
     {
         path: '/login',
       element:<Login/>  
+    },
+    {
+        path: '/payment',
+      element:<Payment/>  
     }
   ]
 },
@@ -57,10 +67,26 @@ const router = createBrowserRouter([{
         path: "/dashboard",
         element: <DashboardHome />,
       },
-      // {
-      //   path: "/dashboard/add-package",
-      //   element: <AddPackage/>,
-      // },
+      {
+        path: "/dashboard/add-package",
+        element: <PackagePost/>,
+      },
+      {
+        path: "/dashboard/all-packages",
+        element: <AllPackeges/>,
+      },
+      {
+        path: "/dashboard/all-drivers",
+        element: <AllDriver/>,
+      },
+      {
+        path: "/dashboard/all-Riders",
+        element: <AllRider/>,
+      },
+      {
+        path: "/dashboard/all-ambassadors",
+        element: <AllAmbassador/>,
+      },
       // {
       //   path: "/dashboard/all-package",
       //   element: <AllPackage />,

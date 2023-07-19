@@ -1,32 +1,33 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import register from '../../assets/register_bg_2.png'
+import React, { useState } from 'react';
+import register from '../assets/register_bg_2.png'
 
 
-
-export default function RiderSignup() {
-
-    const [name, setName] = useState('');
-    const [mobile, setMobile] = useState('');
-    const [email, setEmail] = useState('');
-    const [invite_code, setInvite_code] = useState('');
-    const [password, setPassword] = useState('');
+const PackagePost = () => {
+    const [title, setTitle] = useState('');
+    const [price, setPrice] = useState('');
+    const [subtitle, setSubtitle] = useState('');
+    const [detailsField1, setDetailsField1] = useState('');
+    const [detailsField2, setDetailsField2] = useState('');
+    const [detailsField3, setDetailsField3] = useState('');
+    const [detailsField4, setDetailsField4] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         // Create an object with the form data
         const formData = {
-            name,
-            mobile,
-            email,
-            invite_code,
-            password
+            title,
+            price,
+            subtitle,
+            detailsField1,
+            detailsField2,
+            detailsField3,
+            detailsField4
         };
 
         try {
             // Make a POST request to your API endpoint
-            const response = await fetch('http://localhost:5000/rider-signup', {
+            const response = await fetch('http://localhost:5000/add-package', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -36,25 +37,23 @@ export default function RiderSignup() {
 
             // Check if the request was successful
             if (response.ok) {
-                // Handle successful signup
-                console.log('Signup successful!');
-                window.location = "/payment";
+                // Handle successful package addition
+                console.log('Package added successfully!');
             } else {
-                // Handle signup error
-                console.log('Signup failed.');
+                // Handle package addition error
+                console.log('Failed to add package.');
             }
         } catch (error) {
             // Handle any network or API errors
             console.log('An error occurred:', error);
         }
     };
-
     return (
         <>
             <main>
                 <section className="absolute w-full h-full">
                     <div
-                        className="absolute top-0 w-full h-full bg-gray-900"
+                        className="absolute top-0 w-full h-full bg-gray-500"
                         style={{
                             backgroundImage:
                                 `url(${register})`,
@@ -69,10 +68,10 @@ export default function RiderSignup() {
                                     <div className="rounded-t mb-0 px-6 py-6">
                                         <div className="text-center mb-3">
                                             <h6 className="text-gray-600 text-2xl font-bold">
-                                               Rider Sign Up
+                                               Add Package 
                                             </h6>
                                         </div>
-
+                                        
                                         <hr className="mt-6 border-b-1 border-gray-400" />
                                     </div>
                                     <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
@@ -83,17 +82,16 @@ export default function RiderSignup() {
                                                     className="block uppercase text-gray-700 text-xs font-bold mb-2"
                                                     htmlFor="grid-password"
                                                 >
-                                                    Name
+                                                   Title
                                                 </label>
                                                 <input
                                                     type="text"
-                                                    id="name"
-                                                    value={name}
-                                                    onChange={(e) => setName(e.target.value)}
+                                                    id="title"
+                                                    value={title}
+                                                    onChange={(e) => setTitle(e.target.value)}
                                                     className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
-                                                    placeholder="Name"
+                                                    placeholder="Title"
                                                     style={{ transition: "all .15s ease" }}
-                                                    required
                                                 />
                                             </div>
                                             <div className="relative w-full mb-3">
@@ -101,100 +99,133 @@ export default function RiderSignup() {
                                                     className="block uppercase text-gray-700 text-xs font-bold mb-2"
                                                     htmlFor="grid-password"
                                                 >
-                                                    Mobile
+                                                   Price
                                                 </label>
                                                 <input
-                                                    type="text"
-                                                    id="mobile"
-                                                    value={mobile}
-                                                    onChange={(e) => setMobile(e.target.value)}
-                                                    className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
-                                                    placeholder="Mobile"
-                                                    style={{ transition: "all .15s ease" }}
-                                                    required
-                                                />
-                                            </div>
-                                            <div className="relative w-full mb-3">
-                                                <label
-                                                    className="block uppercase text-gray-700 text-xs font-bold mb-2"
-                                                    htmlFor="grid-password"
-                                                >
-                                                    Email
-                                                </label>
-                                                <input
-                                                    type="email"
-                                                    id="email"
-                                                    value={email}
-                                                    onChange={(e) => setEmail(e.target.value)}
-                                                    className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
-                                                    placeholder="Email"
-                                                    style={{ transition: "all .15s ease" }}
-                                                    required
-                                                />
-                                            </div>
-                                            <div className="relative w-full mb-3">
-                                                <label
-                                                    className="block uppercase text-gray-700 text-xs font-bold mb-2"
-                                                    htmlFor="grid-password"
-                                                >
-                                                    Invite Code
-                                                </label>
-                                                <input
-                                                    type="text"
-                                                    id="invite_code"
-                                                    value={invite_code}
-                                                    onChange={(e) => setInvite_code(e.target.value)}
-                                                    className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
-                                                    placeholder="Invite Code"
-                                                    style={{ transition: "all .15s ease" }}
                                                     
+                                                    type="text"
+                                                    id="price"
+                                                    value={price}
+                                                    onChange={(e) => setPrice(e.target.value)}
+                                                    className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                                                    placeholder="Price"
+                                                    style={{ transition: "all .15s ease" }}
                                                 />
                                             </div>
-
                                             <div className="relative w-full mb-3">
                                                 <label
                                                     className="block uppercase text-gray-700 text-xs font-bold mb-2"
                                                     htmlFor="grid-password"
                                                 >
-                                                    Password
+                                                   Subtitle
                                                 </label>
                                                 <input
-                                                    type="password"
-                                                    id="password"
-                                                    value={password}
-                                                    onChange={(e) => setPassword(e.target.value)}
+                                                    type="text"
+                                                    id="subtitle"
+                                                    value={subtitle}
+                                                    onChange={(e) => setSubtitle(e.target.value)}
                                                     className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
-                                                    placeholder="Password"
+                                                    placeholder="subtitle"
                                                     style={{ transition: "all .15s ease" }}
-                                                    required
+                                                />
+                                            </div>
+                                            <div className="relative w-full mb-3">
+                                                <label
+                                                    className="block uppercase text-gray-700 text-xs font-bold mb-2"
+                                                    htmlFor="grid-password"
+                                                >
+                                                    Feture 1
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    id="detailsField1"
+                                                    value={detailsField1}
+                                                    onChange={(e) => setDetailsField1(e.target.value)}
+                                                    className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                                                    placeholder="Feture 1"
+                                                    style={{ transition: "all .15s ease" }}
+                                                />
+                                            </div>
+                                            <div className="relative w-full mb-3">
+                                                <label
+                                                    className="block uppercase text-gray-700 text-xs font-bold mb-2"
+                                                    htmlFor="grid-password"
+                                                >
+                                                   Feture 2
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    id="detailsField2"
+                                                    value={detailsField2}
+                                                    onChange={(e) => setDetailsField2(e.target.value)}
+                                                    className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                                                    placeholder=" Feture 2"
+                                                    style={{ transition: "all .15s ease" }}
+                                                />
+                                            </div>
+                                            <div className="relative w-full mb-3">
+                                                <label
+                                                    className="block uppercase text-gray-700 text-xs font-bold mb-2"
+                                                    htmlFor="grid-password"
+                                                >
+                                                    Feture 3
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    id="detailsField3"
+                                                    value={detailsField3}
+                                                    onChange={(e) => setDetailsField3(e.target.value)}
+                                                    className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                                                    placeholder="Feture 3"
+                                                    style={{ transition: "all .15s ease" }}
+                                                />
+                                            </div>
+                                            <div className="relative w-full mb-3">
+                                                <label
+                                                    className="block uppercase text-gray-700 text-xs font-bold mb-2"
+                                                    htmlFor="grid-password"
+                                                >
+                                                   Feture 4
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    id="detailsField4"
+                                                    value={detailsField4}
+                                                    onChange={(e) => setDetailsField4(e.target.value)}
+                                                    className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                                                    placeholder="Feture 4"
+                                                    style={{ transition: "all .15s ease" }}
                                                 />
                                             </div>
 
+                                            
+                                            
 
                                             <div className="text-center mt-6">
                                                 <button
                                                     className="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full"
                                                     type="submit"
                                                     style={{ transition: "all .15s ease" }}
+
                                                 >
-                                                    Sign Up
+                                                    Submit
                                                 </button>
                                             </div>
                                         </form>
                                     </div>
                                 </div>
-                                <div className="flex flex-wrap mt-6">
-
-                                    <div className="w-1/2 text-right">
-                                        <Link
-                                            to="/login"
+                                {/* <div className="flex flex-wrap mt-6">
+                                    <div className="w-1/2">
+                                        <a
+                                            href="#pablo"
                                             onClick={e => e.preventDefault()}
                                             className="text-gray-300"
                                         >
-                                            <small>Sign In</small>
-                                        </Link>
+                                            <small>Forgot password?</small>
+                                        </a>
                                     </div>
-                                </div>
+                                    
+                                </div> */}
                             </div>
                         </div>
                     </div>
@@ -203,4 +234,6 @@ export default function RiderSignup() {
             </main>
         </>
     );
-}
+};
+
+export default PackagePost;

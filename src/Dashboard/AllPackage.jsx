@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PackageCard from './PackageCard';
 
-const Packeges = () => {
+const AllPackeges = () => {
     const [packages, setPackages] = useState();
 
     useEffect(() => {
@@ -11,9 +11,9 @@ const Packeges = () => {
     }, [])
     console.log(packages);
     return (
-        
+
         <div className='my-20'>
-            
+
             <h2 className='text-5xl font-bold text-center my-10'>Packages</h2>
             <div className='grid gap-20 lg:grid-cols-3 md:grid-cols-2 lg:mx-40 md:mx-20 mx-10'>
                 {packages &&
@@ -27,4 +27,4 @@ const Packeges = () => {
     );
 };
 
-export default Packeges;
+export default AllPackeges;

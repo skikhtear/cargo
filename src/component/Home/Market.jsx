@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const Market = () => {
     return (
         <div>
-            <div className='grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-10 border border-black border-2px mx-10 mb-5 mt-5'>
+            <div className='grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-10 mx-10 mb-5 mt-5'>
                 <div>
                     <div>
                         {/* <figure><img src={img} alt="car" className='h-3/4' /></figure> */}
@@ -32,7 +32,7 @@ const Market = () => {
                     <img src={driver} alt="" className=''/>
                 </div>
             </div>
-            <div className='grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-10 border border-black border-2px mx-10 mb-5'>
+            <div className='grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-10 mx-10 mb-5'>
                 <div>
                     <img src={rider} alt="" />
                 </div>
@@ -54,7 +54,7 @@ const Market = () => {
                     </div>
                 </div>
             </div>
-            <div className='grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-10 border border-black border-2px mx-10 mb-5'>
+            <div className='grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-10 mx-10 mb-5'>
                 <div>
                     <div className="h-3/4">
                         {/* <figure><img src={img} alt="car" /></figure> */}
