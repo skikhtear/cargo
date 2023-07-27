@@ -5,7 +5,7 @@ const PackageCard = ({ pac }) => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure, you want to delete this sell post');
         if (proceed) {
-            fetch(`https://xox-api.vercel.app/package/${id}`, {
+            fetch(`https://xox-server-gb2y.onrender.com/package/${id}`, {
                 method: 'DELETE',
                 headers: {
                     // authorization: `bearer ${localStorage.getItem('token')}`

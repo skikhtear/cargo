@@ -12,7 +12,7 @@ const DownloadApp = () => {
                 </div>
                 <div>
                     <h3 className='text-3xl font-bold mt-20 mb-5'>Download the XOX mobile application</h3>
-                    <p>Nunc volutpat tincidunt est a scelerisque. Aliquam erat volutpat. Donec varius ex in justo pharetra, nec mollis erat porta. Donec sit amet facilisis neque. In hac habitasse platea dictumst.</p>
+                    <p>Our team is working diligently to bring you the best possible experience when using XOX Ride. Follow us on our social media or check in to see launch date.</p>
                     <div className='flex mt-10'>
                         <div>
                             <button className='btn bg-black text-white mr-5'><FaApple className='text-2xl'/>Download From <br />APPLE APP STORE</button>

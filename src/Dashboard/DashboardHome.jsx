@@ -8,13 +8,13 @@ const DashboardHome = () => {
     const [packages, setPackages] = useState();
 
     useEffect(() => {
-        fetch('https://xox-api.vercel.app/driver')
+        fetch('https://xox-server-gb2y.onrender.com/driver')
             .then(res => res.json())
             .then(data => setDrivers(data))
     }, [])
     console.log(drivers);
     useEffect(() => {
-        fetch('https://xox-api.vercel.app/rider')
+        fetch('https://xox-server-gb2y.onrender.com/rider')
             .then(res => res.json())
             .then(data => setRiders(data))
     }, [])
@@ -23,7 +23,7 @@ const DashboardHome = () => {
     // console.log(riderLength);
 
     useEffect(() => {
-        fetch('https://xox-api.vercel.app/ambassador')
+        fetch('https://xox-server-gb2y.onrender.com/ambassador')
             .then(res => res.json())
             .then(data => setAmbassadors(data))
     }, [])
@@ -32,7 +32,7 @@ const DashboardHome = () => {
 
     console.log(ambassadors);
     useEffect(() => {
-        fetch('https://xox-api.vercel.app/package')
+        fetch('https://xox-server-gb2y.onrender.com/package')
             .then(res => res.json())
             .then(data => setPackages(data))
     }, [])

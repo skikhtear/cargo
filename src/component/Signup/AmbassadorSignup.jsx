@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import register from '../../assets/register_bg_2.png'
 
 
@@ -10,43 +9,6 @@ export default function AmbassadorSignup() {
     const [mobile, setMobile] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
-
-    //     // Create an object with the form data
-    //     const formData = {
-    //         name,
-    //         mobile,
-    //         email,
-    //         password
-    //     };
-
-    //     try {
-    //         // Make a POST request to your API endpoint
-    //         const response = await fetch('https://xox-api.vercel.app/ambassador-signup', {
-    //             method: 'POST',
-    //             headers: {
-    //                 'Content-Type': 'application/json'
-    //             },
-    //             body: JSON.stringify(formData)
-    //         });
-
-    //         // Check if the request was successful
-    //         if (response.ok) {
-    //             // Handle successful signup
-    //             console.log('Signup successful!');
-    //             window.location = "/payment";
-    //         } else {
-    //             // Handle signup error
-    //             console.log('Signup failed.');
-    //         }
-    //     } catch (error) {
-    //         // Handle any network or API errors
-    //         console.log('An error occurred:', error);
-    //     }
-    // };
-
 
 
 
@@ -63,7 +25,7 @@ export default function AmbassadorSignup() {
 
         try {
             // Make a POST request to your API endpoint
-            const response = await fetch('https://xox-api.vercel.app/ambassador-signup', {
+            const response = await fetch('https://xox-server-gb2y.onrender.com/ambassador-signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -78,7 +40,7 @@ export default function AmbassadorSignup() {
 
                 // Make a request to the nodemailer API
                 try {
-                    const nodemailerResponse = await fetch('https://xox-api.vercel.app/ambassador-email', {
+                    const nodemailerResponse = await fetch('https://xox-server-gb2y.onrender.com/ambassador-email', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -228,13 +190,7 @@ export default function AmbassadorSignup() {
                                 <div className="flex flex-wrap mt-6">
 
                                     <div className="w-1/2 text-right">
-                                        <Link
-                                            to="/login"
-                                            onClick={e => e.preventDefault()}
-                                            className="text-gray-300"
-                                        >
-                                            <small>Sign In</small>
-                                        </Link>
+                                        
                                     </div>
                                 </div>
                             </div>

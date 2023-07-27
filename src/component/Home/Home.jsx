@@ -8,6 +8,7 @@ import HowItWork from './HowItWork';
 import Packege from './Packege';
 import Market from './Market';
 import Count from './count';
+import AboutHome from './AboutHome';
 
 const Home = () => {
     return (
@@ -17,7 +18,7 @@ const Home = () => {
             <HowItWork />
             <DownloadApp />
             <Packege />
-            <Aboutus />
+            <AboutHome/>
             <Count/>
         </div>
     );

@@ -17,6 +17,10 @@ import AllPackeges from "../Dashboard/AllPackage";
 import AllDriver from "../Dashboard/AllDrivers";
 import AllRider from "../Dashboard/AllRider";
 import AllAmbassador from "../Dashboard/AllAmbassador";
+import AddRider from "../Dashboard/AddRider";
+import EditRider from "../Dashboard/EditRider";
+import MapRider from "../Dashboard/MapRider";
+import AllContact from "../Dashboard/AllContact";
 
 const router = createBrowserRouter([{
     path: '/',
@@ -82,6 +86,26 @@ const router = createBrowserRouter([{
       {
         path: "/dashboard/all-Riders",
         element: <AllRider/>,
+      },
+      {
+        path: "/dashboard/all-contacts",
+        element: <AllContact/>,
+      },
+      {
+        path: "/dashboard/add-Riders",
+        element: <AddRider/>,
+      },
+      // {
+      //   path: "/dashboard/rider/:id",
+      //   element: <EditRider />,
+      //   loader: ({ params }) => fetch(`http://localhost:5000/rider/${params.id}`)
+
+      // },
+      {
+        path: "/dashboard/rider/:id",
+        element: <MapRider />,
+        loader: ({ params }) => fetch(`https://xox-server-gb2y.onrender.com/rider/${params.id}`)
+
       },
       {
         path: "/dashboard/all-ambassadors",

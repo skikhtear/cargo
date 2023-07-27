@@ -20,12 +20,13 @@ export default function RiderSignup() {
             name,
             mobile,
             email,
+            invite_code,
             password
         };
 
         try {
             // Make a POST request to your API endpoint
-            const response = await fetch('https://xox-api.vercel.app/rider-signup', {
+            const response = await fetch('https://xox-server-gb2y.onrender.com/rider-signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -40,7 +41,7 @@ export default function RiderSignup() {
 
                 // Make a request to the nodemailer API
                 try {
-                    const nodemailerResponse = await fetch('https://xox-api.vercel.app/rider-email', {
+                    const nodemailerResponse = await fetch('https://xox-server-gb2y.onrender.com/rider-email', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -57,7 +58,7 @@ export default function RiderSignup() {
                     console.log('An error occurred while sending the email:', error);
                 }
 
-                window.location = "/https://buy.stripe.com/test_fZeaHc7bG2Mx316eUU";
+                window.location = "https://buy.stripe.com/test_fZeaHc7bG2Mx316eUU";
             } else {
                 // Handle signup error
                 console.log('Signup failed.');
@@ -204,15 +205,7 @@ export default function RiderSignup() {
                                 </div>
                                 <div className="flex flex-wrap mt-6">
 
-                                    <div className="w-1/2 text-right">
-                                        <Link
-                                            to="/login"
-                                            onClick={e => e.preventDefault()}
-                                            className="text-gray-300"
-                                        >
-                                            <small>Sign In</small>
-                                        </Link>
-                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>

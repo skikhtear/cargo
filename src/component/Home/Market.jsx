@@ -14,8 +14,8 @@ const Market = () => {
                         {/* <figure><img src={img} alt="car" className='h-3/4' /></figure> */}
                         
                         <div className="ml-5 mt-3">
-                            <h2 className="text-5xl font-bold">Get in the driver’s seat and get paid</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi vero optio aut iste ducimus ullam modi ad corrupti qui dolores architecto nobis soluta numquam nostrum voluptate iusto illo nesciunt, sunt libero illum suscipit. Veniam optio corrupti natus, labore eligendi quaerat dolore minus odio nam possimus eaque, adipisci, fugiat numquam obcaecati.</p>
+                            <h2 className="text-5xl font-bold">Driver</h2>
+                            <p>Join the ranks of the elite as a valued member of our team of drivers here at XOX Ride. With my own experience as a former 5-star diamond rideshare driver, I understand the secrets to success in this industry. I have encountered the challenges, the highs and lows, and most importantly, the overwhelming sense of accomplishment that comes from being in control of your own destiny. So, are you ready to embark on a path towards unparalleled success and become part of a community that genuinely cares about your journey? Join us at XOX Ride, and let's redefine transportation together.</p>
                             <div className="card-actions justify-start">
                                 
                             </div>
@@ -39,14 +39,15 @@ const Market = () => {
                 
                 <div className='text-center'>
                     <h2 className="text-4xl font-bold text-center mt-10">JOIN AS A RIDER/PASSENGER</h2>
-                    <Link to="/rider-signup"><button className='btn bg-black text-xl font-bold text-center  text-white mt-5'>Rider/Passenger</button></Link>
+                    <Link to="/package"><button className='btn bg-black text-xl font-bold text-center  text-white mt-5'>Rider</button></Link>
                 </div>
                 <div>
                     <div >
                         {/* <figure><img src={img} alt="car"  className='h-3/4'/></figure> */}
                         <div className='ml-5'>
-                            <h2 className="text-5xl font-bold">Large Discounts, Price Protection, and Bike Rides</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia quisquam dolore, odio quibusdam voluptatem excepturi magnam, ab laboriosam hic repudiandae dolorem enim minima quae quis totam, placeat dolor dignissimos! Inventore, iusto. Natus consequuntur ducimus illo possimus neque vitae, officiis sequi tenetur distinctio sunt facilis quia impedit qui odit sapiente architecto dolorem voluptate ea, deserunt aspernatur. Quasi aspernatur dolorum animi molestias cumque. Expedita odio consequuntur quisquam iusto, tempora vel numquam aliquid!</p>
+                            <h2 className="text-5xl font-bold">Rider</h2>
+                            <p>Enjoy convenient rides at low prices. At XOX Ride we believe that getting you and your family moving should never break the bank. Together, we can move faster, safer, and cheaper while keeping our community first in mind. By making an early pledge, you'll unlock exclusive discounts and access to our amazing ride-sharing services available exclusively for our early supporters. Say goodbye to exorbitant prices and hello to a more affordable way of getting around. We're not just focused on saving you money; we're also dedicated to ensuring your safety and prioritizing our community. So Buckle up and let's hit the road together, Launching soon!
+</p>
                             <div className="card-actions justify-start">
 
                             </div>
@@ -59,8 +60,10 @@ const Market = () => {
                     <div className="h-3/4">
                         {/* <figure><img src={img} alt="car" /></figure> */}
                         <div className="card-body">
-                            <h2 className="text-5xl font-bold">Sell Our Package Take You Profit </h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt harum impedit earum quasi hic dicta laboriosam qui perspiciatis, similique perferendis accusamus enim aperiam quas est, error autem consequuntur molestiae provident. Voluptates, repellat? Dolorem doloremque quia adipisci placeat blanditiis vitae, odio animi earum saepe at iusto ut illum magnam a sapiente!</p>
+                            <h2 className="text-5xl font-bold">Rideshare company for our community first in mind.
+                                Enjoy Convenient Rides At Low Prices
+</h2>
+                            <p>We are thrilled to introduce our ambassador program, where you can join us in transforming transportation as we know it. Our mission is simple – to make transportation faster, safer, and cheaper for our beloved communities. Join us today and become an ambassador for change. Let's get our communities moving and start earning together. As an ambassador, you'll not only contribute to the betterment of transportation, but you'll also enjoy the benefits of being a part of our forward-thinking company.</p>
                             <div className="card-actions justify-end">
                                 
                             </div>
@@ -68,7 +71,7 @@ const Market = () => {
                     </div>
                 </div>
                 <div className='text-center'>
-                    <h2 className="text-4xl font-bold text-center mt-10">JOIN AS A AMBASSADOR</h2>
+                    <h2 className="text-4xl font-bold text-center mt-10">JOIN AS AN AMBASSADOR</h2>
                     <Link to="/ambassador-signup"><button className='btn bg-black  text-xl font-bold text-white  text-center  mt-5'>Ambassador</button></Link>
                 </div>
                 <div>

@@ -24,7 +24,7 @@ export default function DriverSignup() {
 
         try {
             // Make a POST request to your API endpoint
-            const response = await fetch('https://xox-api.vercel.app/driver-signup', {
+            const response = await fetch('https://xox-server-gb2y.onrender.com/driver-signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ export default function DriverSignup() {
 
                 // Make a request to the nodemailer API
                 try {
-                    const nodemailerResponse = await fetch('https://xox-api.vercel.app/driver-email', {
+                    const nodemailerResponse = await fetch('https://xox-server-gb2y.onrender.com/driver-email', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -185,15 +185,7 @@ export default function DriverSignup() {
                                 </div>
                                 <div className="flex flex-wrap mt-6">
 
-                                    <div className="w-1/2 text-right">
-                                        <Link
-                                            to="/login"
-                                            onClick={e => e.preventDefault()}
-                                            className="text-gray-300"
-                                        >
-                                            <small>Sign In</small>
-                                        </Link>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>

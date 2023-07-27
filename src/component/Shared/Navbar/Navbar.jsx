@@ -24,7 +24,7 @@ const Navbar = () => {
                             <li><Link to="/ambassador-signup">Become Ambassador</Link></li>
                         </ul>
                     </div>
-                    <Link to="/"><a className="btn btn-ghost normal-case text-xl"><img src={logo} alt="" /></a></Link>
+                    <Link to="/"><img src={logo} alt=""  className='w-80 lg:w-64 md:w-64'/></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-lg">

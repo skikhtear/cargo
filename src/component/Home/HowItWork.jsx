@@ -12,28 +12,28 @@ const HowItWork = () => {
                 <div className='m-10'>
                     <img src={img1} className="border p-10 rounded-full bg-amber-100 border-black mx-auto mb-5" alt="" />
                     <div>
-                        <h3 className='text-3xl text-center '>Book in Just 2 Tabs</h3>
+                        <h3 className='text-3xl text-center '>Book your ride</h3>
                         <p className='text-center'>Curabitur ac quam aliquam urna vehicula semper sed vel elit. Sed et leo purus. Vivamus vitae sapien.</p>
                     </div>
                 </div>
                 <div className='m-10'>
                     <img src={img2} className="border p-10 rounded-full bg-amber-100 border-black mx-auto mb-5" alt="" />
                     <div>
-                        <h3 className='text-3xl text-center'>Get a Driver</h3>
+                        <h3 className='text-3xl text-center'>Start your ride</h3>
                         <p className='text-center'>Curabitur ac quam aliquam urna vehicula semper sed vel elit. Sed et leo purus. Vivamus vitae sapien.</p>
                     </div>
                 </div>
                 <div className='m-10'>
                     <img src={img3} className="border p-10 rounded-full bg-amber-100 border-black mx-auto mb-5" alt="" />
                     <div>
-                        <h3 className='text-3xl text-center'>Track your Driver</h3>
+                        <h3 className='text-3xl text-center'>End your ride</h3>
                         <p className='text-center'>Curabitur ac quam aliquam urna vehicula semper sed vel elit. Sed et leo purus. Vivamus vitae sapien.</p>
                     </div>
                 </div>
                 <div className='m-10'>
                     <img src={img4} className="border p-10 rounded-full bg-amber-100 border-black mx-auto mb-5" alt="" />
                     <div>
-                        <h3 className='text-3xl text-center'>Arrive safely</h3>
+                        <h3 className='text-3xl text-center'>Rate your ride</h3>
                         <p className='text-center'>Curabitur ac quam aliquam urna vehicula semper sed vel elit. Sed et leo purus. Vivamus vitae sapien.</p>
                     </div>
                 </div>

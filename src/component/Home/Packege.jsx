@@ -5,7 +5,7 @@ const Packeges = () => {
     const [packages, setPackages] = useState();
 
     useEffect(() => {
-        fetch('https://xox-api.vercel.app/package')
+        fetch('https://xox-server-gb2y.onrender.com/package')
             .then(res => res.json())
             .then(data => setPackages(data))
     }, [])

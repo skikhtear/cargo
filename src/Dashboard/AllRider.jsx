@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import DataTable from 'react-data-table-component';
 import { toast } from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 
 
 const AllRider = () => {
@@ -13,7 +14,7 @@ const AllRider = () => {
 
     const fetchData = async () => {
         try {
-            const response = await fetch('https://xox-api.vercel.app/rider'); // Replace 'API_ENDPOINT' with your actual API endpoint
+            const response = await fetch('https://xox-server-gb2y.onrender.com/rider'); // Replace 'API_ENDPOINT' with your actual API endpoint
             const data = await response.json();
             setData(data);
         } catch (error) {
@@ -30,7 +31,7 @@ const AllRider = () => {
         const proceed = window.confirm('Are you sure, you want to delete this Driver information');
         try {
             if (proceed) {
-                const response = await fetch(`https://xox-api.vercel.app/rider/${id}`, { method: 'DELETE' }); // Replace 'API_ENDPOINT' with your actual API endpoint
+                const response = await fetch(`https://xox-server-gb2y.onrender.com/rider/${id}`, { method: 'DELETE' }); // Replace 'API_ENDPOINT' with your actual API endpoint
                 setData(data.filter((item) => item.id !== id));
                 // if (data.deletedCount > 0) {
                 //     toast('deleted successfully');
@@ -72,9 +73,22 @@ const AllRider = () => {
             selector: (row) => row.invite_code,
         },
         {
+            name: 'Unique Code',
+            selector: (row) => row.uniqueCode,
+        },
+        {
             name: 'Delete',
             cell: (row) => (
                 <button onClick={() => handleDelete(row._id)}>Delete</button>
+            ),
+            button: true,
+        },
+        {
+            name: 'Edit',
+            cell: (row) => (
+                <Link to={`/dashboard/rider/${row._id}`}>
+                    <button className='btn btn-ghost btn-outline btn-warning'>Update</button>
+                </Link>
             ),
             button: true,
         },

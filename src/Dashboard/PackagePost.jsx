@@ -27,7 +27,7 @@ const PackagePost = () => {
 
         try {
             // Make a POST request to your API endpoint
-            const response = await fetch('https://xox-api.vercel.app/add-package', {
+            const response = await fetch('https://xox-server-gb2y.onrender.com/add-package', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -39,6 +39,7 @@ const PackagePost = () => {
             if (response.ok) {
                 // Handle successful package addition
                 console.log('Package added successfully!');
+                window.location.href ="/dashboard/all-packages"
             } else {
                 // Handle package addition error
                 console.log('Failed to add package.');
@@ -214,18 +215,7 @@ const PackagePost = () => {
                                         </form>
                                     </div>
                                 </div>
-                                {/* <div className="flex flex-wrap mt-6">
-                                    <div className="w-1/2">
-                                        <a
-                                            href="#pablo"
-                                            onClick={e => e.preventDefault()}
-                                            className="text-gray-300"
-                                        >
-                                            <small>Forgot password?</small>
-                                        </a>
-                                    </div>
-                                    
-                                </div> */}
+                               
                             </div>
                         </div>
                     </div>
