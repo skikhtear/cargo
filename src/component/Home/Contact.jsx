@@ -39,7 +39,7 @@ const Contact = () => {
                 // Handle successful signup
                 console.log('contact info sent');
                 try {
-                    const nodemailerResponse = await fetch('https://xox-server-gb2y.onrender.com/contact-email', {
+                    const nodemailerResponse = await fetch('https://xoxrides-server.vercel.app/contact-email', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'

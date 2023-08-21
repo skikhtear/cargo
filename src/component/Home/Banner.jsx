@@ -12,7 +12,7 @@ const Banner = () => {
                 <div className="hero-content  text-neutral-content">
                     <div className="md:mr-[400px] lg:mr-[700px] mr-80">
                         <h1 className="lg:text-5xl md:text-5xl text-xl font-bold text-black">Commute Smarter </h1>
-                        <h1 className="lg:text-5xl md:text-5xl text-xl font-bold text-black mb-10">With <br />XOX Ride</h1>
+                        <h1 className="lg:text-5xl md:text-5xl text-xl font-bold text-black mb-10">With <br />XOX Rides</h1>
                         <Link to="/package"><button className="btn bg-black hover:btn-info text-white rounded-none">Exclusive Offers</button></Link>
                     </div>
                 </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const PackageCard = ({ pac }) => {
-    const { title, price, subtitle, detailsField1, detailsField2, detailsField3, detailsField4 } = pac
+    const { title, price, subtitle, detailsField1, detailsField2, detailsField3, detailsField4,_id } = pac
     return (
         <div className="card bg-base-100 rounded-xl shadow-2xl shadow-black">
             <h2 className='text-4xl text-center font-bold bg-black text-white p-16'>{title}</h2>
@@ -18,7 +18,7 @@ const PackageCard = ({ pac }) => {
                 <h2 className=" mb-5">{detailsField4}</h2>
 
                 <div className="card-actions justify-center">
-                    <Link to="/rider-signup"><button className="btn bg-black hover:btn-info text-white">Buy Package</button></Link>
+                    <Link to={`/rider-signup/${_id}`}><button  className="btn bg-black hover:btn-info text-white">Buy Package</button></Link>
                 </div>
             </div>
         </div>

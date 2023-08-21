@@ -21,6 +21,10 @@ import AddRider from "../Dashboard/AddRider";
 import EditRider from "../Dashboard/EditRider";
 import MapRider from "../Dashboard/MapRider";
 import AllContact from "../Dashboard/AllContact";
+import TermsAndCondition from "../component/Home/TermsAndCondition";
+import CookiesPolicy from "../component/Home/CookiesPolicy";
+import PrivacyPolicy from "../component/Home/PrivacyPolicy";
+import MapSignup from "../component/Signup/MapSignup";
 
 const router = createBrowserRouter([{
     path: '/',
@@ -46,8 +50,10 @@ const router = createBrowserRouter([{
       element:<DriverSignup/>  
     },
     {
-        path: '/rider-signup',
-      element:<RiderSignup/>  
+        path: '/rider-signup/:id',
+        element: <MapSignup />, 
+        loader: ({ params }) => fetch(`https://xoxrides-server.vercel.app/package/${params.id}`)
+
     },
     {
         path: '/ambassador-signup',
@@ -60,6 +66,19 @@ const router = createBrowserRouter([{
     {
         path: '/payment',
       element:<Payment/>  
+    },
+    {
+      path: '/cookies-policy',
+      element: <CookiesPolicy /> 
+    },
+    {
+      path: '/terms-and-condition',
+      element:<TermsAndCondition/> 
+    }
+    ,
+    {
+      path: '/privacy-policy',
+      element:<PrivacyPolicy/> 
     }
   ]
 },
@@ -98,13 +117,13 @@ const router = createBrowserRouter([{
       // {
       //   path: "/dashboard/rider/:id",
       //   element: <EditRider />,
-      //   loader: ({ params }) => fetch(`http://localhost:5000/rider/${params.id}`)
+      //   loader: ({ params }) => fetch(`http://https://xoxrides-server.vercel.app//rider/${params.id}`)
 
       // },
       {
         path: "/dashboard/rider/:id",
         element: <MapRider />,
-        loader: ({ params }) => fetch(`https://xox-server-gb2y.onrender.com/rider/${params.id}`)
+        loader: ({ params }) => fetch(`https://xoxrides-server.vercel.app/rider/${params.id}`)
 
       },
       {

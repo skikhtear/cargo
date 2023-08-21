@@ -14,7 +14,7 @@ const AllRider = () => {
 
     const fetchData = async () => {
         try {
-            const response = await fetch('https://xox-server-gb2y.onrender.com/rider'); // Replace 'API_ENDPOINT' with your actual API endpoint
+            const response = await fetch('https://xoxrides-server.vercel.app/rider'); // Replace 'API_ENDPOINT' with your actual API endpoint
             const data = await response.json();
             setData(data);
         } catch (error) {
@@ -31,7 +31,7 @@ const AllRider = () => {
         const proceed = window.confirm('Are you sure, you want to delete this Driver information');
         try {
             if (proceed) {
-                const response = await fetch(`https://xox-server-gb2y.onrender.com/rider/${id}`, { method: 'DELETE' }); // Replace 'API_ENDPOINT' with your actual API endpoint
+                const response = await fetch(`https://xoxrides-server.vercel.app/rider/${id}`, { method: 'DELETE' }); // Replace 'API_ENDPOINT' with your actual API endpoint
                 setData(data.filter((item) => item.id !== id));
                 // if (data.deletedCount > 0) {
                 //     toast('deleted successfully');
@@ -72,10 +72,10 @@ const AllRider = () => {
             name: 'Invite Code',
             selector: (row) => row.invite_code,
         },
-        {
-            name: 'Unique Code',
-            selector: (row) => row.uniqueCode,
-        },
+        // {
+        //     name: 'Unique Code',
+        //     selector: (row) => row.uniqueCode,
+        // },
         {
             name: 'Delete',
             cell: (row) => (

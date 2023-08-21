@@ -1,25 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { toast } from 'react-hot-toast';
 
 const PackageCard = ({ pac }) => {
-    const handleDelete = id => {
-        const proceed = window.confirm('Are you sure, you want to delete this sell post');
-        if (proceed) {
-            fetch(`https://xox-server-gb2y.onrender.com/package/${id}`, {
-                method: 'DELETE',
-                headers: {
-                    // authorization: `bearer ${localStorage.getItem('token')}`
+    const [data, setData] = useState([]);
+
+    const handleDelete = async (id) => {
+        const proceed = window.confirm('Are you sure, you want to delete this package');
+        try {
+            if (proceed) {
+                const response = await fetch(`https://xoxrides-server.vercel.app/package/${id}`, { method: 'DELETE' }); // Replace 'API_ENDPOINT' with your actual API endpoint
+                setData(data.filter((item) => item.id !== id));
+                // if (data.deletedCount > 0) {
+                //     toast('deleted successfully');
+                //     window.location.reload();
+                // }
+                if (response.ok) {
+                    setData(data.filter((item) => item.id !== id));
+                    toast('Deleted successfully');
+                    window.location.reload();
+                } else {
+                    toast('Failed to delete');
                 }
-            })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.deletedCount > 0) {
-                        toast('deleted successfully');
-                        
-                    }
-                })
+
+
+
+
+            }
+
+        } catch (error) {
+            console.log('Error deleting data:', error);
         }
-    }
+    };
     const { title, price, subtitle, detailsField1, detailsField2, detailsField3, detailsField4,_id } = pac
     return (
         <div className="card bg-base-100 rounded-xl shadow-2xl shadow-black">

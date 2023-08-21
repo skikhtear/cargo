@@ -24,7 +24,7 @@ export default function DriverSignup() {
 
         try {
             // Make a POST request to your API endpoint
-            const response = await fetch('https://xox-server-gb2y.onrender.com/driver-signup', {
+            const response = await fetch('https://xoxrides-server.vercel.app/driver-signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ export default function DriverSignup() {
 
                 // Make a request to the nodemailer API
                 try {
-                    const nodemailerResponse = await fetch('https://xox-server-gb2y.onrender.com/driver-email', {
+                    const nodemailerResponse = await fetch('https://xoxrides-server.vercel.app/driver-email', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'

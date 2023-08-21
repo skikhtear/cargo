@@ -11,7 +11,7 @@ export default function EditRider({rider}) {
     const handleUpdateReview = event => {
         event.preventDefault();
 
-        fetch(`https://xox-server-gb2y.onrender.com/rider-edit/${rider._id}`, {
+        fetch(`https://xoxrides-server.vercel.app/rider-edit/${rider._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

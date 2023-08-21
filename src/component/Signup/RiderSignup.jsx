@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import register from '../../assets/register_bg_2.png'
 
 
 
-export default function RiderSignup() {
-
+export default function RiderSignup({ payment }) {
+ console.log(payment);
     const [name, setName] = useState('');
     const [mobile, setMobile] = useState('');
     const [email, setEmail] = useState('');
@@ -26,7 +26,7 @@ export default function RiderSignup() {
 
         try {
             // Make a POST request to your API endpoint
-            const response = await fetch('https://xox-server-gb2y.onrender.com/rider-signup', {
+            const response = await fetch('https://xoxrides-server.vercel.app/rider-signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -41,7 +41,7 @@ export default function RiderSignup() {
 
                 // Make a request to the nodemailer API
                 try {
-                    const nodemailerResponse = await fetch('https://xox-server-gb2y.onrender.com/rider-email', {
+                    const nodemailerResponse = await fetch('https://xoxrides-server.vercel.app/rider-email', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -58,7 +58,7 @@ export default function RiderSignup() {
                     console.log('An error occurred while sending the email:', error);
                 }
 
-                window.location = "https://buy.stripe.com/test_fZeaHc7bG2Mx316eUU";
+                window.location =`${payment.payment}`;
             } else {
                 // Handle signup error
                 console.log('Signup failed.');

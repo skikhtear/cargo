@@ -25,7 +25,7 @@ export default function AmbassadorSignup() {
 
         try {
             // Make a POST request to your API endpoint
-            const response = await fetch('https://xox-server-gb2y.onrender.com/ambassador-signup', {
+            const response = await fetch('https://xoxrides-server.vercel.app/ambassador-signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -40,7 +40,7 @@ export default function AmbassadorSignup() {
 
                 // Make a request to the nodemailer API
                 try {
-                    const nodemailerResponse = await fetch('https://xox-server-gb2y.onrender.com/ambassador-email', {
+                    const nodemailerResponse = await fetch('https://xoxrides-server.vercel.app/ambassador-email', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'

@@ -5,7 +5,7 @@ const useToken = email => {
     const [token, setToken] = useState('');
     useEffect(() => {
         if (email) {
-            fetch(`https://xox-server-gb2y.onrender.com/jwt?email=${email}`)
+            fetch(`https://xoxrides-server.vercel.app/jwt?email=${email}`)
                 .then(res => res.json())
                 .then(data => {
                     if (data.token) {

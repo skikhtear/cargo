@@ -10,6 +10,7 @@ const PackagePost = () => {
     const [detailsField2, setDetailsField2] = useState('');
     const [detailsField3, setDetailsField3] = useState('');
     const [detailsField4, setDetailsField4] = useState('');
+    const [payment, setPayment] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -22,12 +23,13 @@ const PackagePost = () => {
             detailsField1,
             detailsField2,
             detailsField3,
-            detailsField4
+            detailsField4,
+            payment
         };
 
         try {
             // Make a POST request to your API endpoint
-            const response = await fetch('https://xox-server-gb2y.onrender.com/add-package', {
+            const response = await fetch('https://xoxrides-server.vercel.app/add-package', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -193,6 +195,23 @@ const PackagePost = () => {
                                                     id="detailsField4"
                                                     value={detailsField4}
                                                     onChange={(e) => setDetailsField4(e.target.value)}
+                                                    className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
+                                                    placeholder="Feture 4"
+                                                    style={{ transition: "all .15s ease" }}
+                                                />
+                                            </div>
+                                            <div className="relative w-full mb-3">
+                                                <label
+                                                    className="block uppercase text-gray-700 text-xs font-bold mb-2"
+                                                    htmlFor="grid-password"
+                                                >
+                                                   Payment Link
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    id="payment"
+                                                    value={payment}
+                                                    onChange={(e) => setPayment(e.target.value)}
                                                     className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                                                     placeholder="Feture 4"
                                                     style={{ transition: "all .15s ease" }}

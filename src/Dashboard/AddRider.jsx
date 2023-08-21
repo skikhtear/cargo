@@ -26,7 +26,7 @@ export default function AddRider() {
 
         try {
             // Make a POST request to your API endpoint
-            const response = await fetch('https://xox-server-gb2y.onrender.com/rider-signup', {
+            const response = await fetch('https://xoxrides-server.vercel.app/rider-signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -41,7 +41,7 @@ export default function AddRider() {
 
                 // Make a request to the nodemailer API
                 try {
-                    const nodemailerResponse = await fetch('https://xox-server-gb2y.onrender.com/rider-email', {
+                    const nodemailerResponse = await fetch('https://xoxrides-server.vercel.app/rider-email', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
